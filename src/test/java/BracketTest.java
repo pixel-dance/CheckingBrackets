@@ -14,19 +14,10 @@ public class BracketTest {
     }
 
     @ParameterizedTest
-    @ValueSource(strings = {"(()()()", "))))", ")", "((())"})
-    void NotValidLineShouldReturnFalse(String stringBrackets) {
+    @ValueSource(strings = {"(()()()", "))))", ")", "((())","", "1231", "test","(test)"})
+    void notValidLineShouldReturnFalse(String stringBrackets) {
         Bracket bracket = new Bracket();
         bracket.setStringBrackets(stringBrackets);
         Assertions.assertFalse(bracket.isValid());
     }
-
-    @ParameterizedTest
-    @ValueSource(strings = {"", "1231", "test"})
-    void ShouldReturnFalse(String stringBrackets) {
-        Bracket bracket = new Bracket();
-        bracket.setStringBrackets(stringBrackets);
-        Assertions.assertFalse(bracket.isValid());
-    }
-
 }
