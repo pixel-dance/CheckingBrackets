@@ -15,7 +15,7 @@ public class Bracket implements CheckingBrackets {
 
     @Override
     public boolean isValid() {
-        if (stringBrackets.isBlank() || stringBrackets.length() % 2 != 0) {
+        if (stringBrackets == null || stringBrackets.isBlank() || stringBrackets.length() % 2 != 0) {
             return false;
         }
 
